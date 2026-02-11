@@ -203,7 +203,7 @@
         // 2. 갤러리 최신글 1개 동기화 (이미지 경로 수정 로직 강화)
         const galleryBox = document.querySelector('#gallery-sync-box .gallery-link');
         try {
-            const res = await fetch('gallery_view/gallery_view_1.html');
+            const res = await fetch('gallery_view/gallery_view_2.html');
             if (!res.ok) throw new Error();
             const html = await res.text();
             const doc = parser.parseFromString(html, 'text/html');
