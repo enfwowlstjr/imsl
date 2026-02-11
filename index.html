@@ -187,40 +187,53 @@
         for (let li of notices) {
             const a = li.querySelector('a');
             const url = a.getAttribute('href');
+            if (!url || url === "#") continue;
+
             try {
                 const res = await fetch(url);
-                if (!res.ok) throw new Error();
+                if (!res.ok) throw new Error(`파일을 찾을 수 없음: ${url}`);
+                
                 const html = await res.text();
                 const doc = parser.parseFromString(html, 'text/html');
                 
                 // 상세페이지의 <h3> 제목 추출
                 const titleElement = doc.querySelector('h3');
-                if (titleElement) a.innerText = titleElement.innerText;
+                if (titleElement) {
+                    a.innerText = titleElement.innerText;
+                } else {
+                    console.warn(`${url} 페이지에 <h3> 태그가 없습니다.`);
+                }
                 
-                // 날짜 추출 (YYYY.MM.DD)
+                // 본문에서 날짜(YYYY.MM.DD) 패턴 추출
                 const dateMatch = doc.body.innerText.match(/\d{4}\.\d{2}\.\d{2}/);
                 if (dateMatch) li.querySelector('.notice-date').innerText = dateMatch[0];
             } catch (e) {
-                li.style.display = 'none'; // 파일이 없으면 숨김
+                console.error("공지사항 동기화 중 오류 발생:", e);
+                li.style.display = 'none'; // 오류 발생 시 해당 줄 숨김
             }
         }
 
         // 2. 갤러리 최신글 1개 동기화
         const galleryBox = document.querySelector('#gallery-sync-box .gallery-link');
+        const galleryUrl = galleryBox.getAttribute('href');
+        
         try {
-            const res = await fetch('gallery_view/gallery_view_1.html');
-            if (!res.ok) throw new Error();
+            const res = await fetch(galleryUrl);
+            if (!res.ok) throw new Error(`갤러리 파일을 찾을 수 없음: ${galleryUrl}`);
+            
             const html = await res.text();
             const doc = parser.parseFromString(html, 'text/html');
 
-            const title = doc.querySelector('h3') ? doc.querySelector('h3').innerText : "Update";
-            const imgElement = doc.querySelector('img');
+            const title = doc.querySelector('h3') ? doc.querySelector('h3').innerText : "최신 소식";
+            const imgElement = doc.querySelector('.view-content img') || doc.querySelector('img');
             const imgSrc = imgElement ? imgElement.src : "";
-            const boldMsg = doc.querySelector('strong') ? doc.querySelector('strong').innerText : "";
-            const dateMatch = doc.body.innerText.match(/\d{4}\.\d{2}\.\d{2}/);
+            
+            // 본문의 첫 번째 strong 태그 내용 가져오기
+            const boldMsg = doc.querySelector('strong') ? doc.querySelector('strong').innerText : "업데이트된 소식이 있습니다.";
+            const dateMatch = doc.body.innerText.match(/\d{4}\.\d{2}\.\d.2}/);
 
             galleryBox.innerHTML = `
-                <img src="${imgSrc}" alt="Latest Gallery">
+                <img src="${imgSrc}" alt="Latest Gallery" onerror="this.src='images/logo.png';">
                 <div class="gallery-preview-text">
                     <h4>${title}</h4>
                     <p><strong>${boldMsg}</strong></p>
@@ -228,12 +241,12 @@
                 </div>
             `;
         } catch (e) {
-            console.log("Gallery sync info: No latest file found.");
+            console.error("갤러리 동기화 중 오류 발생:", e);
+            document.querySelector('#gallery-sync-box').innerHTML = "<p style='padding:20px; color:#999;'>최신 갤러리 데이터를 불러올 수 없습니다.</p>";
         }
     }
 
     window.addEventListener('DOMContentLoaded', syncContent);
 </script>
-
 </body>
 </html>
