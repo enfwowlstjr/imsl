@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Professor | MSL Inha</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 상세 이력을 위한 스타일 */
+        .cv-section { margin-top: 40px; }
+        .cv-section h4 { 
+            color: #003a71; 
+            border-bottom: 2px solid #003a71; 
+            padding-bottom: 10px; 
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cv-item { display: flex; margin-bottom: 25px; align-items: flex-start; }
+        .cv-date { 
+            min-width: 140px; 
+            font-weight: bold; 
+            color: #666; 
+            font-size: 0.9rem;
+            padding-top: 2px;
+        }
+        .cv-content { flex: 1; }
+        .cv-content strong { display: block; font-size: 1.1rem; color: #222; margin-bottom: 5px; }
+        .cv-content ul { margin: 8px 0 0 18px; padding: 0; font-size: 0.9rem; color: #555; }
+        .cv-content li { margin-bottom: 5px; line-height: 1.5; }
+        
+        /* 프로필 정보 줄 간격 및 굵기 */
+        .info-row { margin-bottom: 2px; display: flex; align-items: center; }
+        .info-label { 
+            background-color: #00bcd4; color: white; padding: 2px 10px; 
+            border-radius: 3px; font-size: 0.85rem; font-weight: 900; 
+            display: inline-block; width: 85px; text-align: center; margin-right: 15px;
+        }
+        .info-text { font-size: 0.95rem; color: #333; }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.html" class="logo"><img src="images/logo.png" height="50"></a>
+        <ul>
+            <li><a href="professor.html">PROFESSOR</a></li>
+            <li><a href="research.html">RESEARCH</a></li>
+            <li><a href="publications.html">PUBLICATIONS</a></li>
+            <li><a href="people.html">MEMBERS</a></li>
+            <li class="dropdown">
+                <a href="#">BOARD ▼</a>
+                <div class="dropdown-content">
+                    <a href="notice.html">Notice</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="main-wrapper">
+    <h2 style="border-bottom: 2px solid #003a71; padding-bottom: 10px; color: #003a71;">PROFESSOR</h2>
+    
+    <div class="profile-card-box">
+        <div style="z-index: 1;"><img src="images/professor.jpg" width="180" style="border:1px solid #ddd; background:#fff; padding:4px;"></div>
+        <div style="z-index: 1; flex: 1;">
+            <h3 style="margin:0 0 20px 0; color:#003a71; font-size:1.8rem;">Prof. Jin-Kyun Lee</h3>
+            <div class="info-row">
+                <span class="info-label" style="font-weight: 900;">Address</span>
+                <span class="info-text">INHA UNIVERSITY, 100 inharo, Michuhol-gu, Incheon 22212, Korea</span>
+            </div><br>
+            <div class="info-row">
+                <span class="info-label">E-mail</span>
+                <span class="info-text">jkl36@inha.ac.kr</span>
+            </div><br>
+            <div class="info-row">
+                <span class="info-label">Tel</span>
+                <span class="info-text">032-860-7481 (office), 032-860-8769 (lab)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <h4> Education</h4>
+        <div class="cv-item">
+            <div class="cv-date">2002.1 – 2005.10</div>
+            <div class="cv-content">
+                <strong>University of Cambridge, Clare College, UK</strong>
+                <ul>
+                    <li>Ph.D. Department of Chemistry</li>
+                    <li>Thesis: Application of supercritical CO2 to organic synthesis as an environmentally benign reaction medium (Palladium catalysis and phase transfer catalysis)</li>
+                    <li>Studentship awarded by AstraZeneca (UK), Overseas Research Students Awards Scheme (UK), Cambridge Overseas Trust (UK)</li>
+                    <li>Supervised by Prof. Andrew B. Holmes</li>
+                    <li>2004. 12-2005. 10, conducted Ph.D research in the University of Melbourne as a visiting student with Prof. Andrew B. Holmes</li>
+                </ul>
+            </div>
+        </div>
+        <div class="cv-item">
+            <div class="cv-date">1996.3 – 1998.2</div>
+            <div class="cv-content">
+                <strong>Seoul National University, South Korea</strong>
+                <ul>
+                    <li>MSc. Department of fiber and polymer science (supervised by Prof. Soo Young Park)</li>
+                    <li>Thesis: Structure control of side-chain fluorescent polymers and its effect on electroluminescent properties</li>
+                </ul>
+            </div>
+        </div>
+        <div class="cv-item">
+            <div class="cv-date">1991.3 – 1996.2</div>
+            <div class="cv-content">
+                <strong>Seoul National University, South Korea</strong>
+                <ul>
+                    <li>BSc. Department of fiber and polymer science</li>
+                    <li>Graduated with the highest GPA among 41 students (Summa cum laude)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <h4> Experience</h4>
+        <div class="cv-item">
+            <div class="cv-date">2010.3 – present</div>
+            <div class="cv-content">
+                <strong>Inha University, South Korea</strong>
+                <ul>
+                    <li>Associate Professor, Polymer Science & Engineering</li>
+                    <li>Research topics:
+                        <ul>
+                            <li>Functional fluorinated polymers for organic integrated circuits</li>
+                            <li>Molecular and polymeric materials for energy conversion</li>
+                            <li>Soluble inorganic materials upgraded with performance organic ligands</li>
+                        </ul>
+                    </li>
+                    <li>Currently giving lectures on Organic and Polymer Synthesis</li>
+                </ul>
+            </div>
+        </div>
+        <div class="cv-item">
+            <div class="cv-date">2008.10 – 2010.2</div>
+            <div class="cv-content">
+                <strong>Cornell University, USA</strong>
+                <ul>
+                    <li>Research associate, Materials Science & Engineering</li>
+                    <li>Research topics:
+                        <ul>
+                            <li>Orthogonal Processing: synthesis and application of fluorinated functional materials processable in fluorinated solvents and supercritical carbon dioxide</li>
+                            <li>High resolution photolithography: synthesis and characterisation of small molecular photoresist materials for extreme UV and 193 nm light source</li>
+                        </ul>
+                    </li>
+                    <li>Collaboration with Prof. Christopher K. Ober and Prof. George Malliaras</li>
+                </ul>
+            </div>
+        </div>
+        <div class="cv-item">
+            <div class="cv-date">2005.11 – 2008.9</div>
+            <div class="cv-content">
+                <strong>Cornell University, USA</strong>
+                <ul>
+                    <li>Postdoctoral associate, Materials Science & Engineering</li>
+                    <li>Collaboration with Prof. Christopher K. Ober</li>
+                </ul>
+            </div>
+        </div>
+        <div class="cv-item">
+            <div class="cv-date">1998.1 – 2001.12</div>
+            <div class="cv-content">
+                <strong>SK Energy, South Korea</strong>
+                <ul>
+                    <li>Research scientist</li>
+                    <li>Development of commercial processes for the production of fine chemicals and pharmaceuticals (custom synthesis division)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="cv-section">
+        <h4> Presentation</h4>
+        <div class="cv-item">
+            <div class="cv-date">2016. 05. 19 – 20</div>
+            <div class="cv-content">
+                “High Mobility Semiconducting Polymers Composed of All Electron-Accepting Monomer Units” ICME & D 2016
+            </div>
+        </div>
+        <div class="cv-item">
+            <div class="cv-date">2015. 08. 23 – 28</div>
+            <div class="cv-content">
+                “Fluoros Materials Chemistry for Greater Progress of Organic Electronics” 21st ISFC & ISoFT’15
+            </div>
+        </div>
+    </div><br>
+
+    <div class="cv-section" style="margin-bottom: 50px;">
+        <h4> Honors (Awards)</h4>
+        <div class="cv-item">
+            <div class="cv-date">2009</div>
+            <div class="cv-content">
+                Best Poster Award ( 2nd International Symposium on Flexible Organic Electronics, Halkidiki, Greece)
+            </div>
+        </div>
+        <div class="cv-item">
+            <div class="cv-date">2009</div>
+            <div class="cv-content">
+                Best Poster Award ( Materials Research Society Spring meeting, San Francisco, USA)
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-info">
+            <strong>인하대학교 재료합성연구실 &nbsp;&nbsp;MATERIALS SYNTHESIS LABORATORY </strong><br><br>
+
+            Department of Polymer Science and Engineering, Inha University<br>
+            669, Building 2, 100 Inha-ro, Michuhol-gu, Incheon 22212, Korea
+        </div>
+        <div style="text-align: right;">
+            Tel: +82-32-860-7114 (Lab)<br>
+            Copyright © 2026 MSL. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+</body>
+</html>

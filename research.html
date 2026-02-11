@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Research - Topic 1 | MSL Inha</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cv-section { margin-top: 40px; }
+        .cv-section h4 { 
+            color: #003a71; 
+            border-bottom: 2px solid #003a71; 
+            padding-bottom: 10px; 
+            margin-bottom: 25px; 
+        }
+
+        /* 리서치 전용 레이아웃 (사진 상단, 글 하단) */
+        .research-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .research-image-box {
+            width: 100%;
+            max-width: 850px;
+            text-align: center;
+        }
+        .research-image-box img {
+            width: 100%;
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .research-text-box {
+            width: 100%;
+            max-width: 850px;
+        }
+        .research-text-box strong {
+            display: block;
+            font-size: 1.5rem;
+            color: #003a71;
+            margin-bottom: 15px;
+            border-left: 5px solid #00bcd4;
+            padding-left: 12px;
+        }
+        .research-text-box p {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.9;
+            margin: 0;
+            word-break: keep-all;
+        }
+        .keywords-bar {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #00bcd4;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="MSL Logo" height="50"></a>
+        <ul>
+            <li><a href="professor.html">PROFESSOR</a></li>
+            <li><a href="research.html">RESEARCH</a></li>
+            <li><a href="publications.html">PUBLICATIONS</a></li>
+            <li><a href="people.html">MEMBERS</a></li>
+            <li class="dropdown">
+                <a href="#">BOARD ▼</a>
+                <div class="dropdown-content">
+                    <a href="notice.html">Notice</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="main-wrapper">
+    <h2 style="border-bottom: 2px solid #003a71; padding-bottom: 10px; color: #003a71;">RESEARCH</h2>
+
+    <div class="pub-tabs">
+        <a href="research.html" class="pub-tab active">주제 1</a>
+        <a href="research_topic2.html" class="pub-tab">주제 2</a>
+        <a href="research_topic3.html" class="pub-tab">주제 3</a>
+    </div>
+
+    <div class="cv-section">
+        <h4>연구 주제</h4>
+        <div class="research-container">
+            <div class="research-image-box">
+                <img src="images/research_1.jpg" alt="연구 사진">
+            </div>
+            <div class="research-text-box">
+                <strong>연구 주제</strong>
+                <p>
+연구 내용
+                </p>
+                <div class="keywords-bar">
+                    Keywords:                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-info">
+            <strong>인하대학교 재료합성연구실 &nbsp;&nbsp;MATERIALS SYNTHESIS LABORATORY </strong><br><br>
+            Department of Polymer Science and Engineering, Inha University<br>
+            669, Building 2, 100 Inha-ro, Michuhol-gu, Incheon 22212, Korea
+        </div>
+        <div style="text-align: right;">
+            Tel: +82-32-860-7114 (Lab)<br>
+            Copyright © 2026 MSL. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+</body>
+</html>
