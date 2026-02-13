@@ -6,7 +6,7 @@
     <title>Materials Synthesis Laboratory | Inha Univ.</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 기본 배경 및 폰트 설정 */
+        /* 메인 페이지 전용 박스 디자인 스타일 */
         body { background-color: #f4f6f8; margin: 0; padding: 0; }
 
         /* --- 1. 레이아웃 통합 및 여백 확대 --- */
@@ -18,7 +18,7 @@
         }
 
         /* --- 2. Boxed Hero Banner (300px 높이 유지) --- */
-        .hero-container { margin-top: 40px; margin-bottom: 60px; } /* 하단 여백 확대 */
+        .hero-container { margin-top: 40px; margin-bottom: 60px; }
         .hero-banner {
             width: 100%;
             height: 300px; 
@@ -44,13 +44,13 @@
         }
         .hero-banner h1 span { color: #00bcd4; }
 
-        /* --- 3. Latest Publication (저자명 수정 및 여백 확대) --- */
-        .latest-pub-container { width: 100%; margin-bottom: 60px; } /* 하단 여백 확대 */
+        /* --- 3. Latest Publication --- */
+        .latest-pub-container { width: 100%; margin-bottom: 60px; }
         .pub-highlight-box {
             background: #fff;
             border: 1px solid #e1e4e8;
             border-radius: 12px;
-            padding: 35px; /* 내부 여백 확대 */
+            padding: 35px;
             display: flex;
             gap: 35px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
@@ -66,21 +66,21 @@
         .pub-title-main { font-size: 1.45rem; color: #003a71; margin-bottom: 15px; line-height: 1.35; font-weight: 800; }
         .pub-authors-main { font-size: 0.95rem; color: #555; margin-bottom: 15px; line-height: 1.6; }
 
-        /* --- 4. Notice & Gallery Grid (간격 및 여백 확대) --- */
+        /* --- 4. Notice & Gallery Grid --- */
         .main-content-grid { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 40px; /* 박스 사이 간격 확대 */
-            margin-bottom: 80px; /* 하단 여백 확대 */
+            gap: 40px; 
+            margin-bottom: 80px; 
         }
-.content-box { 
-    background: #fff; 
-    border: 1px solid #e1e4e8; 
-    border-radius: 12px; 
-    padding: 25px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04); 
-    transition: transform 0.2s ease;
-}
+        .content-box { 
+            background: #fff; 
+            border: 1px solid #e1e4e8; 
+            border-radius: 12px; 
+            padding: 25px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04); 
+            transition: transform 0.2s ease;
+        }
         .content-box-header { 
             display: flex; 
             justify-content: space-between; 
@@ -98,7 +98,15 @@
         .notice-list li a:hover { color: #00bcd4; font-weight: bold; }
         .notice-date { color: #999; font-size: 0.85rem; flex-shrink: 0; }
 
-        .gallery-link { display: flex; gap: 20px; text-decoration: none; color: inherit; }
+        /* --- 갤러리 중앙 정렬 수정한 부분 --- */
+        .gallery-link { 
+            display: flex; 
+            gap: 20px; 
+            text-decoration: none; 
+            color: inherit; 
+            align-items: center;    /* 세로 가운데 정렬 */
+            justify-content: center; /* 가로 가운데 정렬 */
+        }
         .gallery-link img { width: 180px; height: 125px; object-fit: cover; border-radius: 8px; border: 1px solid #eee; }
         .gallery-preview-text { flex: 1; }
         .gallery-preview-text h4 { margin: 0 0 10px 0; color: #003a71; font-size: 1.15rem; font-weight: bold; }
@@ -213,8 +221,7 @@
         <a href="research.html" class="card" style="background-image: url('images/card_research.jpg');"><span>RESEARCH</span></a>
         <a href="publications.html" class="card" style="background-image: url('images/card_pub.jpg');"><span>PUBLICATIONS</span></a>
         <a href="people.html" class="card" style="background-image: url('images/card_members.jpg');"><span>MEMBERS</span></a>
-
-<br>
+        <br>
     </div>
 </div>
 
@@ -233,7 +240,6 @@
 </footer>
 
 <script>
-    // 공지사항 및 갤러리 통합 동기화 스크립트 (복구 및 강화)
     async function syncContent() {
         const parser = new DOMParser();
 
